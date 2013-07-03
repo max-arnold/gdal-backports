@@ -1,68 +1,77 @@
-gdal (1.10.0-1~precise1) precise; urgency=low
+gdal (1.10.0-1~raring1) raring; urgency=high
 
-  * Backport 1.10.0 to Ubuntu Precise
+  * Launchpad build for Raring.
+  * Removed OGDI support.
 
- -- Max Arnold <arnold.maxim@gmail.com>  Wed, 03 Jul 2013 23:49:45 +0700
+ -- Jerome Villeneuve Larouche <jlarouche@mapgears.com>  Thu, 04 Jul 2013 09:47:45 -0400
 
-gdal (1.9.0-3.1ubuntu1) quantal; urgency=low
+gdal (1.10.0-0~exp3) experimental; urgency=low
 
-  * Merge from Debian unstable. Remaining changes:
-    - Track changes to libpoppler25 API.
+  * Added netcdf-bin build-dep to get nc-config, as required by current config.
+  * Fixed gdalpaths patch for version 1.10.
+  * Fixed symbols files to manage correctly library dependencies.
+  * Added java support. Thanks Ezequiel Lara Gómez for the initial patch.
+    Added a pair of new b-deps for that, along with two new patches java*.
+    (closes: #628022)
 
- -- Logan Rosen <logatronico@gmail.com>  Sun, 07 Oct 2012 22:44:23 -0400
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Wed, 26 Jun 2013 11:19:15 +0200
 
-gdal (1.9.0-3.1) unstable; urgency=low
+gdal (1.10.0-0~exp2) experimental; urgency=low
 
-  * Non-maintainer upload.
-  * Fix "FTBFS when ruby1.9.1 installed": force building with ruby1.8:
+  * Removed Provides: libgdal1 in debian/control.
+
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 25 Jun 2013 16:30:39 +0200
+
+gdal (1.10.0-0~exp1) experimental; urgency=low
+
+  * Moved to new LIBKML driver instead of the old KML one. It has a much
+    better support for complex KML files. (closes: #685695)
+  * Merged NMU 1.9.0-3.1:
+    Fix "FTBFS when ruby1.9.1 installed": force building with ruby1.8:
     set variables in debian/rules and new patch force-ruby1.8 to ruby1.8.
     Thanks to Cédric Boutillier for reviewing and testing this patch.
-    (Closes: #684433)
+    (closes: #684433)
+  * Added libarmadillo support.
+  * Added TIFF/GEOTIFF symbols rename to definitively solve problem of
+    symbol collisions for programs that both links geotiff/tiff libraries.
+    This choice implies that the API does not include anymore any *tiff
+    related functions: changed API declaration.
+  * Policy bumped to 3.9.4. No changes required.
+  * New upstream version with many fixes. All patches refreshed.
+  	(closes: #679887)
+  * Added a Breaks: libgdal1-1.6.0. I don't know if it still makes sense, 
+    but for sure it does not hurt. (closes: #677403)
+  * Now debian/rules should be parallel-safe for making. Thanks Gregor Hermann
+    for the patch. (closes: #686014)
+  * Now it depends explicitly on epsilon >= 0.9.1 by upstream.
+    (closes: #672738)
 
- -- gregor herrmann <gregoa@debian.org>  Tue, 18 Sep 2012 17:25:11 +0200
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Sun, 04 Apr 2013 11:39:57 +0100
 
-gdal (1.9.0-3ubuntu4) quantal; urgency=low
+gdal (1.9.2-1~exp2) experimental; urgency=low
 
-  * No-change rebuild for libpoppler27 -> libpoppler28 transition.
+  * Reintroduced internal symbols hiding for better compatibility 
+    against mixing external geotiff and gdal. See Orfeotoolbox case:
+    See #558733 again.
 
- -- Robert Ancell <robert.ancell@canonical.com>  Wed, 12 Sep 2012 16:56:19 +1200
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Fri, 29 Mar 2013 14:07:43 +0100
 
-gdal (1.9.0-3ubuntu3) quantal; urgency=low
+gdal (1.9.2-1~exp1) experimental; urgency=low
 
-  * No-change rebuild for libpoppler26 -> libpoppler27 transition.
+  [ Jerome Villeneuve Larouche ]
+  * New upstream release
 
- -- Ilya Barygin <randomaction@ubuntu.com>  Fri, 07 Sep 2012 21:13:05 +0400
-
-gdal (1.9.0-3ubuntu2) quantal; urgency=low
-
-  * No-change rebuild for the libpoppler26 transition.
-
- -- Adam Conrad <adconrad@ubuntu.com>  Sat, 23 Jun 2012 19:40:47 -0600
-
-gdal (1.9.0-3ubuntu1) quantal; urgency=low
-
-  * Track changes to libpoppler25 API.
-
- -- Andy Whitcroft <apw@ubuntu.com>  Wed, 13 Jun 2012 16:49:20 +0100
-
-gdal (1.9.0-3) unstable; urgency=low
-
-  * Now b-depending on Ruby 1.8 explicitly. 
-    (closes: #675972)
-  * Now b-depending on poppler-private package.
-    (closes: #672405)
-
- -- Francesco Paolo Lovergine <frankie@debian.org>  Tue, 05 Jun 2012 14:27:39 +0200
-
-gdal (1.9.0-2) unstable; urgency=low
-
+  [ Francesco Paolo Lovergine ]
   * Reintroducing libgdal1-dev as a transitional package to allow r-deps
     to build in any environment.
-  * Removed old depndency on libcurl3-dev for libgdal-dev and added a 
+  * Removed old dependency on libcurl3-dev for libgdal-dev and added a 
     preferred dep on libcurl4-gnutls-dev to make lintian happy.
   * Added build-{arch|indep} targets in debian/rules.
+  * Fixed a bit debian/changelog for latest changes. 
+  * Now using libxerces-c-dev as dependency for current library version.
+  * Policy bumped to 3.9.4. No special changes required.
 
- -- Francesco Paolo Lovergine <frankie@debian.org>  Wed, 09 May 2012 13:00:22 +0200
+ -- Francesco Paolo Lovergine <frankie@debian.org>  Fri, 29 Mar 2013 10:38:40 +0100
 
 gdal (1.9.0-1) unstable; urgency=low
 
