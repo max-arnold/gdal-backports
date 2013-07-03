@@ -66,31 +66,37 @@ configure-stamp:
 			--mandir=\$$\{prefix\}/share/man \
 			--includedir=\$$\{prefix\}/include/gdal \
 			--with-threads \
-			--with-grass=no \
+			--without-grass \
+			--without-libgrass \
+			--without-cfitsio \
 			--with-libtiff=internal \
 			--with-geotiff=internal \
 			--with-jasper \
 			--with-netcdf \
 			--with-xerces \
 			--with-geos \
-			--with-sqlite3 \
-			--with-curl \
+			--without-sqlite3 \
+			--without-curl \
 			--with-pg \
-			--with-ogdi \
-			--with-mysql \
-			--with-perl \
-			--with-ruby \
+			--without-ogdi \
+			--without-mysql \
+			--without-perl \
+			--without-ruby \
 			--with-python \
-			--with-odbc \
+			--without-odbc \
+			--without-idb \
+			--without-sde \
+			--without-hdf4 \
+			--without-hdf5 \
 			--with-dods-root=/usr \
 			--with-static-proj4=yes \
 			--with-spatialite=/usr \
-			--with-cfitsio=no \
-			--with-ecw=no \
-			--with-mrsid=no \
-			--with-poppler=yes \
+			--without-cfitsio \
+			--without-ecw \
+			--without-mrsid \
+			--without-poppler \
 			--with-openjpeg=yes \
-			--with-freexl=yes \
+			--without-freexl \
 			--with-libkml=yes \
 			--with-armadillo=yes \
 			--with-liblzma=yes \
