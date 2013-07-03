@@ -75,23 +75,25 @@ configure-stamp:
 			--with-netcdf \
 			--with-xerces \
 			--with-geos \
-			--with-sqlite3 \
-			--with-curl \
+			--with-sqlite3=no \
+			--with-curl=no \
 			--with-pg \
-			--with-mysql \
+			--with-mysql=no \
 			--with-perl \
 			--with-ruby \
 			--with-java=/usr/lib/jvm/default-java \
 			--with-python \
-			--with-odbc \
+			--with-odbc=no \
 			--with-ogdi=no \
 			--with-dods-root=/usr \
 			--with-static-proj4=yes \
 			--with-spatialite=/usr \
 			--with-cfitsio=no \
+			--with-hdf4=no \
+			--with-hdf5=no \
 			--with-ecw=no \
 			--with-mrsid=no \
-			--with-poppler=yes \
+			--with-poppler=no \
 			--with-openjpeg=yes \
 			--with-freexl=yes \
 			--with-libkml=yes \
