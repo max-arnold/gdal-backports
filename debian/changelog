@@ -1,3 +1,9 @@
+gdal (1.10.0-1~precise2) precise; urgency=low
+
+  * Repeat PPA upload (forgot to add -sa option to debuild)
+
+ -- Max Arnold <arnold.maxim@gmail.com>  Thu, 04 Jul 2013 02:58:29 +0700
+
 gdal (1.10.0-1~precise1) precise; urgency=low
 
   * Backport to Ubuntu Precise
