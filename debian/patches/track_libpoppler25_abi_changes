@@ -1,0 +1,46 @@
+Description: Track changes to libpoppler25 API
+ Track changes to libpoppler 25 ABI.
+ .
+ startDoc now takes a PDFDoc rather than its Xref.
+ setErrorFunction -> setErrorCallback.
+Author: Andy Whitcroft <apw@ubuntu.com>
+Last-Update: 2012-06-13
+Index: gdal-1.9.0/frmts/pdf/pdfdataset.cpp
+===================================================================
+--- gdal-1.9.0.orig/frmts/pdf/pdfdataset.cpp	2012-02-20 09:48:39.000000000 +0000
++++ gdal-1.9.0/frmts/pdf/pdfdataset.cpp	2012-06-13 17:14:21.967465186 +0100
+@@ -330,7 +330,7 @@
+         SplashOutputDev *poSplashOut;
+         poSplashOut = new SplashOutputDev(splashModeRGB8, 4, gFalse, sColor);
+         PDFDoc* poDoc = poGDS->poDoc;
+-        poSplashOut->startDoc(poDoc->getXRef());
++        poSplashOut->startDoc(poDoc);
+         double dfDPI = poGDS->dfDPI;
+ 
+         /* EVIL: we modify a private member... */
+@@ -521,13 +521,14 @@
+ /************************************************************************/
+ 
+ #ifdef USE_POPPLER
+-static void PDFDatasetErrorFunction(int nPos, char *pszMsg, va_list args)
++static void PDFDatasetErrorCallback( void *data, ErrorCategory category,
++				     int nPos, char *msg )
+ {
+     CPLString osError;
+ 
+     if (nPos >= 0)
+         osError.Printf("Pos = %d, ", nPos);
+-    osError += CPLString().vPrintf(pszMsg, args);
++    osError += CPLString().Printf("%s", msg);
+ 
+     if (strcmp(osError.c_str(), "Incorrect password") == 0)
+         return;
+@@ -570,7 +571,7 @@
+     GooString* poUserPwd = NULL;
+ 
+     /* Set custom error handler for poppler errors */
+-    setErrorFunction(PDFDatasetErrorFunction);
++    setErrorCallback(PDFDatasetErrorCallback, NULL);
+ 
+     PDFDoc* poDoc = NULL;
+     ObjectAutoFree oObj;
