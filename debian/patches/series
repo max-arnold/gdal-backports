@@ -9,5 +9,4 @@ ecw-plugin
 mrsid-plugin
 symver
 spatialite
-track_libpoppler25_abi_changes
 force-ruby1.8
