@@ -7,8 +7,8 @@ Uploaders: Francesco Paolo Lovergine <frankie@debian.org>
 Build-Depends: debhelper (>= 8), zlib1g-dev, libnetcdf-dev (>= 1:4.0.0),
  libjasper-dev, libpng-dev, libjpeg-dev, libgif-dev,
  libpq-dev, libxerces-c2-dev,
- python-numpy, doxygen, d-shlibs, libgeos-dev, python-all-dev (>= 2.6.6-3~), 
- chrpath, swig, patch, libexpat1-dev, libproj-dev,
+ python-numpy, doxygen, d-shlibs, libgeos-dev, python-all-dev (>= 2.6.6-3~),
+ ruby1.8, ruby1.8-dev, chrpath, swig, patch, libexpat1-dev, libproj-dev,
  libdap-dev, libxml2-dev, libspatialite-dev (>= 2.4.0~rc2-4), libepsilon-dev (>= 0.9.1),
  liblzma-dev, libopenjpeg-dev, libarmadillo-dev,
  libkml-dev, liburiparser-dev
@@ -73,11 +73,11 @@ Section: libdevel
 Architecture: any
 Depends: libgdal1 (=${binary:Version}), libc6-dev, libnetcdf-dev, 
  libjasper-dev|libjasper-1.701-dev, libpng-dev, libjpeg-dev, libgif-dev,
- libpq-dev, libxerces-c2-dev, libgeos-dev,
- libltdl3-dev, libspatialite-dev, libdap-dev, ${misc:Depends}
+ libpq-dev, libxerces-c2-dev, libgeos-dev, libltdl3-dev,
+ libspatialite-dev, libdap-dev, ${misc:Depends}
 Suggests: libgdal-doc
-Conflicts: libgdal1-dev (<< 1.10.0-1~)
-Replaces: libgdal1-dev (<< 1.10.0-1~)
+Conflicts: libgdal1-dev (<< 1.9.0-1~)
+Replaces: libgdal1-dev (<< 1.9.0-1~)
 Description: Geospatial Data Abstraction Library - Development files
  GDAL is a translator library for raster geospatial data formats.
  As a library, it presents a single abstract data model to the

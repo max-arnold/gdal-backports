@@ -66,37 +66,36 @@ configure-stamp:
 			--mandir=\$$\{prefix\}/share/man \
 			--includedir=\$$\{prefix\}/include/gdal \
 			--with-threads \
-			--without-grass \
-			--without-libgrass \
-			--without-cfitsio \
+			--with-grass=no \
+			--with-libgrass=no \
 			--with-libtiff=internal \
 			--with-geotiff=internal \
 			--with-jasper \
 			--with-netcdf \
 			--with-xerces \
 			--with-geos \
-			--without-sqlite3 \
-			--without-curl \
+			--with-sqlite3=no \
+			--with-curl=no \
 			--with-pg \
-			--without-ogdi \
-			--without-mysql \
-			--without-perl \
-			--without-ruby \
+			--with-ogdi=no  \
+			--with-mysql=no \
+			--with-perl \
+			--with-ruby \
 			--with-python \
-			--without-odbc \
-			--without-idb \
-			--without-sde \
-			--without-hdf4 \
-			--without-hdf5 \
+			--with-odbc=no \
+			--with-hdf4=no \
+			--with-hdf5=no \
+			--with-idb=no \
+			--with-sde=no \
 			--with-dods-root=/usr \
 			--with-static-proj4=yes \
 			--with-spatialite=/usr \
-			--without-cfitsio \
-			--without-ecw \
-			--without-mrsid \
-			--without-poppler \
+			--with-cfitsio=no \
+			--with-ecw=no \
+			--with-mrsid=no \
+			--with-poppler=no \
 			--with-openjpeg=yes \
-			--without-freexl \
+			--with-freexl=no \
 			--with-libkml=yes \
 			--with-armadillo=yes \
 			--with-liblzma=yes \
