@@ -1,3 +1,9 @@
+gdal (1.10.1-1~precise1) precise; urgency=low
+
+  * Backport 1.10.1 to Ubuntu Precise.
+
+ -- Max Arnold <arnold.maxim@gmail.com>  Mon, 18 Nov 2013 23:28:20 +0700
+
 gdal (1.10.0-1~precise2) precise; urgency=low
 
   * Repeat PPA upload (forgot to add -sa option to debuild)
