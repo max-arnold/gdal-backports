@@ -1,5 +1,5 @@
-GDAL 1.10.0 backport to Ubuntu Precise, required for PostGIS 2.0 PPA: https://launchpad.net/~lwarx/+archive/postgis-pg92-bp/+packages
-Use it together with PostgreSQL 9.2 installed from apt.postgresql.org
+GDAL 1.10.1 backport to Ubuntu Precise, required for PostGIS 2 PPA: https://launchpad.net/~lwarx/+archive/postgis-pg93-bp/+packages
+Use it together with PostgreSQL 9.3 installed from apt.postgresql.org
 
 NOTE, the following dependencies were disabled:
 
